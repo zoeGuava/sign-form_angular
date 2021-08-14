@@ -6,7 +6,7 @@ module.exports = {
     './public/**/*.{html}',
     './src/**/*.{vue,js,ts,html}'
   ],
-  presets: [],
+  // presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
