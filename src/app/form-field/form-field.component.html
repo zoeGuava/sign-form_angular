@@ -1,0 +1,28 @@
+<form class="flex flex-col p-6 rounded-lg shadow-grey bg-white">
+  <div *ngFor="let data of input_data" class="relative mb-4">
+    <i *ngIf="data.error" class="{{error_styles.icon}} icon-error"></i>
+    <label for="{{data.id}}"></label>
+    <input
+      type="{{data.id}}"
+      id="{{data.id}}"
+      name="{{data.name}}"
+      value="{{data.value}}"
+      [(ngModel)]="data.value"
+      class="
+        {{data.error ? error_styles.input : 'focus:border-black'}}
+        p-4 mb-1 w-full border-2 rounded-md text-md font-semibold focus:outline-none focus:ring-0">
+    <p *ngIf="data.error" class="text-xs text-right italic text-primary-red">
+      {{data.errorMsg}}
+    </p>
+  </div>
+  <button
+    type="submit"
+    (click)="onSubmit()"
+    class="mb-4 p-4 shadow-default-green bg-primary-green active:shadow-active-green active:bg-green-300 focus:outline-none rounded-md text-md font-normal text-white">
+    CLAIM YOUR FREE TRIAL
+  </button>
+  <p class="text-center text-xs text-gray-400">
+    By clicking the button, you are agreeing to our 
+    <b class="cursor-pointer font-bold text-red-400"> Terms and Services</b>
+  </p>
+</form>
